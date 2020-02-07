@@ -1,0 +1,12 @@
+Spring Boot RestfulWebservices
+
+
+
+User saveUri = userDao.save(user);
+URI location = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(saveUri.getId()).toUri();
+return ResponseEntity.created(location).build();
+
+This will return the post request response as 201 created(status code). 
+
+
+29-37 need to watch
